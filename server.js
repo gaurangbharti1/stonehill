@@ -9,10 +9,6 @@ var bodyParser = require('body-parser'); // Library for parsing data
 var jsonParser = bodyParser.json(); // Using Data type Json
 var cors = require("cors"); // Library for handling access headers
 var express = require('express'); // Framework for Node
-// Modules
-var student = require("./Modules/student/student.js");
-var teacher = require("./Modules/teacher/teacher.js")
-var transport = require("./Modules/transport/transport.js")
 //Server Setup
 var app = express(); // Establishing Express App
 app.use(express.logger()); // Logging Connections
