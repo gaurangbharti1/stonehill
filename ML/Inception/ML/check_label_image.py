@@ -1,7 +1,7 @@
 import sys
 import subprocess
 import os
-path = "/root/Inception/ML/testImage/"
+path = "/home/rahultarak12345/stonehill/ML/Inception/ML/testImage/"
 accuracy_dict = {}
 acc = 0
 total = 0

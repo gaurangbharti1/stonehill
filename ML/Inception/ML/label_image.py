@@ -6,9 +6,9 @@ image_path = sys.argv[1]
 image_data = tf.gfile.FastGFile(image_path, 'rb').read()
 # Loads label file, strips off carriage return
 label_lines = [line.rstrip() for line
-    in tf.gfile.GFile("/root/Inception/ML/retrained_labels.txt")]
+    in tf.gfile.GFile("/home/rahultarak12345/stonehill/ML/Inception/ML/retrained_labels.txt")]
 # Unpersists graph from file
-with tf.gfile.FastGFile("/root/Inception/ML/retrained_graph.pb", 'rb') as f:
+with tf.gfile.FastGFile("/home/rahultarak12345/stonehill/ML/Inception/ML/retrained_graph.pb", 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')
