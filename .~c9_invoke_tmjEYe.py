@@ -83,7 +83,7 @@ print("Other Relevant Statistics:")
 print(data['data'][1])
 print("Temperature (C): " + data['data'][0]['coordinates'][0]['dates'][0]['value'])
 print("Effective Humidity" + data['data'][1]['coordinates'][0]['dates'][0]['value'])
-print("Effective Cloud Cover" + data['data'][2]['coordinates'][0]['dates'][0]['value'])
+print("Effective Cloud Cover" + data['data'][2]['value'])
 
 print("\n")
 print("--------------------------------------------------------")
