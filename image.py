@@ -19,6 +19,7 @@ with tf.gfile.FastGFile("/home/rahultarak12345/stonehill/ML/Inception/ML/retrain
     graph_def.ParseFromString(f.read())
     _ = tf.import_graph_def(graph_def, name='')
 # Feed the image_data as input to the graph and get first prediction
+print("Possible Results of the Image: (Ordered by Confidence)")
 with tf.Session() as sess:
     softmax_tensor = sess.graph.get_tensor_by_name('final_result:0')
     predictions = sess.run(softmax_tensor,
@@ -38,6 +39,7 @@ def split(var):
     return (var[1])
     
 stageOfGrowth = split(image_path)
+print("Current Stage of Growth :" + stageOfGrowth)
 
 #if (imageType == "maize"):
     #a
