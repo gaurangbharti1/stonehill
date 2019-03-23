@@ -11,6 +11,7 @@ var cors = require("cors"); // Library for handling access headers
 var express = require('express');
 var mqtt = require('mqtt'); // Framework for Node
 var dateFormat = require('dateformat');
+var spawn = require("child_process").spawn;
 //Server Setup
 var app = express(); // Establishing Express App
 app.use(express.logger()); // Logging Connections
@@ -54,3 +55,13 @@ app.get('/frontend', function(req, res) {
         timeRecorded: timeRecorded
     })
 });
+app.get("/checkImage", function(req, res) {
+    let image = req.query.imagePath
+    var process = spawn('python3', ["./image.py",
+       image
+    ]);
+    process.stdout.on('data', function(data) { 
+        
+    } ); 
+
+})

@@ -36,9 +36,13 @@ with tf.Session() as sess:
 def split(var):
     var = str(var)
     var = var.split('-')
+    var =  (var[1])
+    var = var.split('.')
     return (var[1])
     
+    
 stageOfGrowth = split(image_path)
+print("Best Predicted Crop Type :" + imageType)
 print("Current Stage of Growth :" + stageOfGrowth)
 
 #if (imageType == "maize"):
@@ -46,6 +50,7 @@ print("Current Stage of Growth :" + stageOfGrowth)
     
 #elif (imageType =="common wheat"):
     #a
-import urllib.request
-contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json").read()
-print(contents)
+#import urllib.request
+#contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json").read()
+#print(contents)
+sys.stdout.flush()
