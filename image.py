@@ -61,12 +61,12 @@ print("Best Predicted Crop Type :" + imageType)
 
 if (imageType == "maize"):
     stage = maizeStage[currentStage]
-    print("Current Stage of Growth is " + stage.stageName)
-    print("Required Water in this Stage is : " + stage.waterUsage)
+    print("Current Stage of Growth is " + stage['stageName'])
+    print("Required Water in this Stage is : " + stage['waterUsage'])
 elif (imageType =="common wheat"):
     stage = wheatStage[currentStage]
-    print("Current Stage of Growth is " + stage.stageName)
-    print("Required Water in this Stage is : " + stage.waterUsage)
+    print("Current Stage of Growth is " +stage['stageName'])
+    print("Required Water in this Stage is : " + tage['waterUsage'])
 #import urllib.request
 #contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json").read()
 #print(contents)
