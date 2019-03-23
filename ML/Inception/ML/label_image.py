@@ -1,7 +1,7 @@
 import tensorflow as tf, sys, os
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-image_path = sys.argv[1]
+image_path = (sys.argv[1])
 # Read in the image_data
 image_data = tf.gfile.FastGFile(image_path, 'rb').read()
 # Loads label file, strips off carriage return
