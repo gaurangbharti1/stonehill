@@ -85,7 +85,7 @@ temp1 = data['data'][0]['coordinates'][0]['dates'][0]['value']
 temp2 = data['data'][1]['coordinates'][0]['dates'][0]['value']
 temp3 = data['data'][2]['coordinates'][0]['dates'][0]['value']
 print("Temperature (C): " + str(temp1))
-print("Effective Humidity" + str(temp2)])
+print("Effective Humidity" + str(temp2))
 print("Effective Cloud Cover" + str(temp3))
 
 print("\n")
