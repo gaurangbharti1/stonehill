@@ -1,5 +1,5 @@
-maizeStage = [["waterUsage" : "1mm", "stageName" : "Dormancy"], ["waterUsage" : "3mm", "stageName" : "Tillering"], ["waterUsage" : "5mm", "stageName" : "Boot"], ["waterUsage" : "6mm", "stageName" : "Heading & Flowering"], ["waterUsage" : "4mm", "stageName" : "Ripening"]]
-wheatStage = [["waterUsage" : "0.06in", "stageName" : "Seedling"],[ "waterUsage" : "0.25in, stageName" : "Silking"], ["waterUsage" : "0.33in", "stageName" : "Silking-Grainfill"], ["waterUsage" : "0.25in", "stageName" : "Grainfill"],[ "waterUsage" : "0.23in","stageName" : "Maturity"]]
+maizeStage = [{"waterUsage" : "1mm", "stageName" : "Dormancy"}, {"waterUsage" : "3mm", "stageName" : "Tillering"}, {"waterUsage" : "5mm", "stageName" : "Boot"}, {"waterUsage" : "6mm", "stageName" : "Heading & Flowering"}, {"waterUsage" : "4mm", "stageName" : "Ripening"}]
+wheatStage = [{"waterUsage" : "0.06in", "stageName" : "Seedling"},{ "waterUsage" : "0.25in, stageName" : "Silking"}, {"waterUsage" : "0.33in", "stageName" : "Silking-Grainfill"}, {"waterUsage" : "0.25in", "stageName" : "Grainfill"},{ "waterUsage" : "0.23in","stageName" : "Maturity"}]
 
 import sys
 image_path = sys.argv[1]
