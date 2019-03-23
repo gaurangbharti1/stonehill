@@ -1,5 +1,5 @@
-#maizeStage = [{"waterUsage" : "",}]
-#wheatStage = []
+maizeStage = [{"waterUsage" : "1mm", "stageName" : "Dormancy", "w"}]
+wheatStage = [{"waterUsage" : ""}]
 
 import sys
 image_path = sys.argv[1]
@@ -53,4 +53,9 @@ print("Current Stage of Growth :" + stageOfGrowth)
 #import urllib.request
 #contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json").read()
 #print(contents)
-sys.stdout.flush()
+import requests 
+URL = "https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json"
+r = requests.get(url = URL) 
+data = r.json()
+print(data)
+
