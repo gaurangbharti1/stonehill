@@ -80,10 +80,13 @@ r = requests.get(url = URL)
 data = r.json()
 #print(data)
 print("Other Relevant Statistics:")
-print(data['data'][1])
-print("Temperature (C): " + data['data'][0]['coordinates'][0]['dates'][0]['value'])
-print("Effective Humidity" + data['data'][1]['coordinates'][0]['dates'][0]['value'])
-print("Effective Cloud Cover" + data['data'][2]['coordinates'][0]['dates'][0]['value'])
+#print(data['data'][1])
+temp1 =  data['data'][0]['coordinates'][0]['dates'][0]['value']
+temp2 =  data['data'][1]['coordinates'][0]['dates'][0]['value']
+temp3 = data['data'][2]['coordinates'][0]['dates'][0]['value']
+print("Temperature (C): " + str(temp1))
+print("Effective Humidity" + str(temp2)])
+print("Effective Cloud Cover" + str(temp3))
 
 print("\n")
 print("--------------------------------------------------------")
