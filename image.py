@@ -1,5 +1,5 @@
-maizeStage = [{"waterUsage" : "1mm", "stageName" : "Dormancy", "w"}]
-wheatStage = [{"waterUsage" : ""}]
+maizeStage = [{"waterUsage" : "1mm", "stageName" : "Dormancy", "waterUsage" : "3mm", "stageName" : "Tillering", "waterUsage" : "5mm", "stageName" : "Boot", "waterUsage" : "6mm", "stageName" : "Heading & Flowering", "waterUsage" : "4mm", "stageName" : "Ripening"}]
+wheatStage = [{"waterUsage" : "0.06in", "stageName" : "Seedling", "waterUsage" : "0.25in, stageName" : "Silking", "waterUsage" : "0.33in", "stageName" : "Silking-Grainfill", "waterUsage" : "0.25in", "stageName" : "Grainfill", "waterUsage" : "0.23in","stageName" : "Maturity"}]
 
 import sys
 image_path = sys.argv[1]
@@ -38,24 +38,58 @@ def split(var):
     var = var.split('-')
     var =  (var[1])
     var = var.split('.')
-    return (var[1])
+    return (var[0])
     
     
 stageOfGrowth = split(image_path)
+currentStage = 0
+if (stageOfGrowth < 75):
+    currentStage = 0
+    elif (stageOfGrowth < 150):
+        currentStage = 1
+    elif (stageOfGrowth < 200):
+        currentStage = 2
+    elif (stageOfGrowth < 250):
+        currentStage = 3
+    else:
+        currentStage = 4
+print("\n")
+print("--------------------------------------------------------")
+print("\n")
 print("Best Predicted Crop Type :" + imageType)
-print("Current Stage of Growth :" + stageOfGrowth)
 
-#if (imageType == "maize"):
-    #a
-    
-#elif (imageType =="common wheat"):
-    #a
+
+if (imageType == "maize"):
+    stage = maizeStage[currentStage]
+    print("Current Stage of Growth is " + stage.stageName)
+    print("Required Water in this Stage is : " + stage.waterUsage)
+    elif (imageType =="common wheat"):
+     stage = wheatStage[currentStage]
+    print("Current Stage of Growth is " + stage.stageName)
+    print("Required Water in this Stage is : " + stage.waterUsage)
 #import urllib.request
 #contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json").read()
 #print(contents)
+print("\n")
+print("--------------------------------------------------------")
+print("\n")
+
 import requests 
 URL = "https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json"
 r = requests.get(url = URL) 
 data = r.json()
-print(data)
+#print(data)
+print("Other Relevant Statistics:")
+print("Temperature (C): " + data['data'][0]['value'])
+print("Effective Humidity" + data['data'][1]['value'])
+print("Effective Cloud Cover" + data['data'][2]['value'])
+
+print("\n")
+print("--------------------------------------------------------")
+print("\n")
+print("Live Mositure Reading from Sensor")
+import subprocess
+process = subprocess.Popen(['node', 'mqtt.js'], stdout=subprocess.PIPE)
+out, err = process.communicate()
+print(out)
 
