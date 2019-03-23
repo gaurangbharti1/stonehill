@@ -1,5 +1,5 @@
 maizeStage = [{"waterUsage" : "1mm", "stageName" : "Dormancy"}, {"waterUsage" : "3mm", "stageName" : "Tillering"}, {"waterUsage" : "5mm", "stageName" : "Boot"}, {"waterUsage" : "6mm", "stageName" : "Heading & Flowering"}, {"waterUsage" : "4mm", "stageName" : "Ripening"}]
-wheatStage = [{"waterUsage" : "0.06in", "stageName" : "Seedling"},{ "waterUsage" : "0.25in, stageName" : "Silking"}, {"waterUsage" : "0.33in", "stageName" : "Silking-Grainfill"}, {"waterUsage" : "0.25in", "stageName" : "Grainfill"},{ "waterUsage" : "0.23in","stageName" : "Maturity"}]
+#wheatStage = [{"waterUsage" : "0.06in", "stageName" : "Seedling"},{ "waterUsage" : "0.25in, stageName" : "Silking"}, {"waterUsage" : "0.33in", "stageName" : "Silking-Grainfill"}, {"waterUsage" : "0.25in", "stageName" : "Grainfill"}, {"waterUsage" : "0.23in","stageName" : "Maturity"}]
 
 import sys
 image_path = sys.argv[1]
@@ -45,14 +45,14 @@ stageOfGrowth = split(image_path)
 currentStage = 0
 if (stageOfGrowth < 75):
     currentStage = 0
-    elif (stageOfGrowth < 150):
-        currentStage = 1
-    elif (stageOfGrowth < 200):
-        currentStage = 2
-    elif (stageOfGrowth < 250):
-        currentStage = 3
-    else:
-        currentStage = 4
+elif (stageOfGrowth < 150):
+    currentStage = 1
+elif (stageOfGrowth < 200):
+    currentStage = 2
+elif (stageOfGrowth < 250):
+    currentStage = 3
+else:
+    currentStage = 4
 print("\n")
 print("--------------------------------------------------------")
 print("\n")
@@ -63,8 +63,8 @@ if (imageType == "maize"):
     stage = maizeStage[currentStage]
     print("Current Stage of Growth is " + stage.stageName)
     print("Required Water in this Stage is : " + stage.waterUsage)
-    elif (imageType =="common wheat"):
-     stage = wheatStage[currentStage]
+elif (imageType =="common wheat"):
+    stage = wheatStage[currentStage]
     print("Current Stage of Growth is " + stage.stageName)
     print("Required Water in this Stage is : " + stage.waterUsage)
 #import urllib.request
