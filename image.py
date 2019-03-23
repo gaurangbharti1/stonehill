@@ -98,7 +98,7 @@ while True:
   line = process.stdout.readline()
   if line != '':
     #the real code does filtering here
-    print (line.rstrip())
+    print (str(line.rstrip())+"% of Mositure in the Soil")
   else:
     break
 
