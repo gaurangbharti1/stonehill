@@ -81,7 +81,7 @@ data = r.json()
 #print(data)
 print("Other Relevant Statistics:")
 print(data['data'][0])
-print("Temperature (C): " + data['data'][0]['value'])
+print("Temperature (C): " + data['data'][0]['dates'][0]['value'])
 print("Effective Humidity" + data['data'][1]['value'])
 print("Effective Cloud Cover" + data['data'][2]['value'])
 
