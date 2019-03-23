@@ -1,6 +1,6 @@
 #maizeStage = [{"waterUsage" : "",}]
 #wheatStage = []
-import urllib.request
+
 import sys
 image_path = sys.argv[1]
 
@@ -33,7 +33,8 @@ with tf.Session() as sess:
             imageType = human_string
 
 def split(var):
-    temp = var.split('-')
+    var = str(var)
+    var = var.split('-')
     return (var[1])
     
 stageOfGrowth = split(image_path)
@@ -43,5 +44,6 @@ stageOfGrowth = split(image_path)
     
 #elif (imageType =="common wheat"):
     #a
-contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p,percip_24h:mm/12.971599,77.594566/json").read()
+import urllib.request
+contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json").read()
 print(contents)
