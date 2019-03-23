@@ -41,7 +41,7 @@ def split(var):
     return (var[0])
     
     
-stageOfGrowth = split(image_path)
+stageOfGrowth = int(split(image_path))
 currentStage = 0
 if (stageOfGrowth < 75):
     currentStage = 0
