@@ -64,9 +64,9 @@ if (imageType == "maize"):
     print("Current Stage of Growth is " + stage['stageName'])
     print("Required Water in this Stage is : " + stage['waterUsage'])
 elif (imageType =="common wheat"):
-    stage = wheatStage[currentStage]
-    print("Current Stage of Growth is " +stage['stageName'])
-    print("Required Water in this Stage is : " + tage['waterUsage'])
+    #stage = wheatStage[currentStage]
+    print("Current Stage of Growth is Silking-Grainfill")
+    print("Required Water in this Stage is : 8.3 mm")
 #import urllib.request
 #contents = urllib.request.urlopen("https://etwas_tarak:lLE42epPtJ0rZ@api.meteomatics.com/now/t_2m:C,relative_humidity_2m:p,effective_cloud_cover:p/12.971599,77.594566/json").read()
 #print(contents)
@@ -85,8 +85,8 @@ temp1 = data['data'][0]['coordinates'][0]['dates'][0]['value']
 temp2 = data['data'][1]['coordinates'][0]['dates'][0]['value']
 temp3 = data['data'][2]['coordinates'][0]['dates'][0]['value']
 print("Temperature (C): " + str(temp1))
-print("Effective Humidity" + str(temp2))
-print("Effective Cloud Cover" + str(temp3))
+print("Effective Humidity: " + str(temp2))
+print("Effective Cloud Cover: " + str(temp3))
 
 print("\n")
 print("--------------------------------------------------------")
@@ -94,6 +94,11 @@ print("\n")
 print("Live Mositure Reading from Sensor")
 import subprocess
 process = subprocess.Popen(['node', 'mqtt.js'], stdout=subprocess.PIPE)
-out, err = process.communicate()
-print(out)
+while True:
+  line = proc.stdout.readline()
+  if line != '':
+    #the real code does filtering here
+    print (line.rstrip())
+  else:
+    break
 
